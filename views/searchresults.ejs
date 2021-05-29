@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-image: url("background3.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            -webkit-text-stroke: 1px blue;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
+        <a class="navbar-brand" style="color: rgb(191, 255, 161)">Search Results</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <form method="POST" action='/search' class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" name="Search" type="search" placeholder="Search"
+                    aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div id="Lord of the Flies" class="container1">
+        <a id="flies"><img src="/flies.jpg" width="193" height="300"></a>
+        <br>
+        <br>
+        <span class="bookname">Lord of the Flies</span>
+    </div>
+
+    <div id="The Grapes of Wrath" class="container1">
+        <a id="grapes"><img   src="/grapes.jpg" width="193" height="300"></a>
+        <br>
+        <br>
+        <span class="bookname">The Grapes of Wrath</span>
+    </div>
+
+    <div id="Leaves of Grass" class="container1" >
+        <a id="leaves"> <img  src="/leaves.jpg" width="193" height="300"></a>
+        <br>
+        <br>
+        <span class="bookname">Leaves of Grass</span>
+    </div>
+
+    <div id="The Sun and Her Flowers" class="container1">
+        <a id="sun"><img   src="/sun.jpg" width="193" height="300"></a>
+        <br>
+        <br>
+        <span class="bookname">The Sun and Her Flowers</span>
+    </div>
+
+    <div id="Dune" class="container1" >
+        <a id="dune"><img  src="/dune.jpg" width="193" height="300"></a>
+        <br>
+        <br>
+        <span class="bookname">Dune</span>
+    </div>
+
+    <div id="To Kill a Mockingbird" class="container1" >
+        <a id="mockingbird"><img  src="/mockingbird.jpg" width="193" height="300"></a>
+        <br>
+        <br>
+        <span class="bookname">To Kill a Mockingbird</span>
+    </div>
+   
+
+    
+    
+    <style>
+        .container1{
+            display: none;
+            margin-right: 10%;
+            margin-left: 5%;
+            margin-top: 2%;
+            margin-bottom: 2%;
+        }
+
+        .bookname{
+            color: white;
+            font-size: 40;
+            text-align: center;
+            padding: 2%;
+            text-align: center;
+        }
+    </style>
+<br>
+<br>
+<br>
+<p style="display:none;"><%= searchValue %></p>
+<p id= "notFound">Book Not Found</p>
+
+<style>
+#notFound
+{
+    font-size: 50px;
+    color: #ffffff;
+    display: none;
+    text-align: center;
+}
+
+</style>
+</body>
+</html>
+
+<script>
+var flag = false;
+var searchVal =  "<%=searchValue%>";
+searchVal=searchVal.toLowerCase();
+if("lord of the flies".includes(searchVal))
+{
+    document.getElementById("Lord of the Flies").style.display = "inline-block";
+    document.getElementById('flies').href= "/flies"; 
+    flag=true;
+}
+if("the grapes of wrath".includes(searchVal))
+{
+    document.getElementById("The Grapes of Wrath").style.display = "inline-block";
+    document.getElementById('grapes').href= "/grapes"; 
+    flag=true;
+}
+if("leaves of grass".includes(searchVal))
+{
+    document.getElementById("Leaves of Grass").style.display = "inline-block";
+    document.getElementById('leaves').href= "/leaves"; 
+    flag=true;
+}
+if("the sun and her flowers".includes(searchVal))
+{
+    document.getElementById("The Sun and Her Flowers").style.display = "inline-block";
+    document.getElementById('sun').href= "/sun"; 
+    flag=true;
+}
+if("dune".includes(searchVal))
+{
+    document.getElementById("Dune").style.display = "inline-block";
+    document.getElementById('dune').href= "/dune"; 
+    flag=true;
+}
+
+if("to kill a mockingbird".includes(searchVal))
+{
+    document.getElementById("To Kill a Mockingbird").style.display = "inline-block";
+    document.getElementById('mockingbird').href= "/mockingbird"; 
+    flag=true;
+}
+if(!flag)
+document.getElementById("notFound").style.display = "block";
+</script>
