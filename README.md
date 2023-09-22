@@ -1,4 +1,4 @@
-# Web-Based Book Database Application
+# Web-Based Book Application
 
 ## Project Objective
 
